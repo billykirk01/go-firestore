@@ -20,7 +20,7 @@ type person struct {
 }
 
 func main() {
-   client, err := fire.NewFirestoreClient("/Users/billykirk/Development/Firebase/Credentials/wkirk-go-test.json")
+   client, err := fire.NewFirestoreClient("/path/to/serviceaccount.json")
    if err != nil {
 	   log.Fatalf("Could not initialize Cloud Firestore: %v", err)
    }
