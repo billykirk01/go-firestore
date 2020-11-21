@@ -8,41 +8,41 @@ Examples below:
 package main
 
 import (
-	"fmt"
-	"log"
+  "fmt"
+  "log"
 
-	fire "github.com/wkirk01/Go-Firestore"
+  fire "github.com/wkirk01/Go-Firestore"
 )
 
-type Person struct {
-	First string
-	Last  string
+type person struct {
+  First string
+  Last  string
 }
 
 func main() {
-	client, err := fire.NewFirestoreClient("/Users/billykirk/Development/Firebase/Credentials/wkirk-go-test.json")
-	if err != nil {
-		log.Fatalf("Could not initialize Cloud Firestore: %v", err)
-	}
-	defer client.Close()
+  client, err := fire.NewFirestoreClient("/Users/billykirk/Development/Firebase/Credentials/wkirk-go-test.json")
+  if err != nil {
+	  log.Fatalf("Could not initialize Cloud Firestore: %v", err)
+  }
+  defer client.Close()
 
-	person := Person{
-		First: "Billy",
-		Last:  "Kirk",
-	}
+  p1 := person{
+	  First: "Billy",
+	  Last:  "Kirk",
+  }
 
-	docID, err := client.CreateDocument(client.Db.Collection("users"), person)
-	if err != nil {
-		log.Fatalf("Failed adding document: %v", err)
-	}
+  docID, err := client.CreateDocument(client.Db.Collection("users"), p1)
+  if err != nil {
+	  log.Fatalf("Failed adding document: %v", err)
+  }
 
-	fmt.Println("Saved document with ID:", docID)
+  fmt.Println("Saved document with ID:", docID)
 
-	err = client.DeleteDocument(client.Db.Collection("users"), docID)
-	if err != nil {
-		log.Fatalf("Failed deleting document: %v", err)
-	}
+  err = client.DeleteDocument(client.Db.Collection("users"), docID)
+  if err != nil {
+	  log.Fatalf("Failed deleting document: %v", err)
+  }
 
-	fmt.Println("Deleted document with ID:", docID)
+  fmt.Println("Deleted document with ID:", docID)
 }
 ```
