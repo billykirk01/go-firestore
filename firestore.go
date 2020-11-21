@@ -16,8 +16,8 @@ type FiresoreClient struct {
 	Db  *firestore.Client
 }
 
-// NewFirestoreClient creates a new Cloud Firestore Database Client
-func NewFirestoreClient(crednetialsPath string) (*FiresoreClient, error) {
+// NewClient creates a new Cloud Firestore Database Client
+func NewClient(crednetialsPath string) (*FiresoreClient, error) {
 	ctx := context.Background()
 	sa := option.WithCredentialsFile(crednetialsPath)
 	app, err := firebase.NewApp(ctx, nil, sa)
