@@ -11,7 +11,7 @@ import (
    "fmt"
    "log"
 
-   fire "github.com/wkirk01/Go-Firestore"
+   firestore "github.com/wkirk01/Go-Firestore"
 )
 
 type person struct {
@@ -20,7 +20,7 @@ type person struct {
 }
 
 func main() {
-   client, err := fire.NewFirestoreClient("/path/to/serviceaccount.json")
+   client, err := firestore.NewClient("/path/to/serviceaccount.json")
    if err != nil {
 	   log.Fatalf("Could not initialize Cloud Firestore: %v", err)
    }
