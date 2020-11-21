@@ -13,7 +13,7 @@ import (
 //FiresoreClient provides access to the Firestore service.
 type FiresoreClient struct {
 	ctx context.Context
-	db  *firestore.Client
+	Db  *firestore.Client
 }
 
 // NewFirestoreClient creates a new Cloud Firestore Database Client
@@ -32,7 +32,7 @@ func NewFirestoreClient(crednetialsPath string) (*FiresoreClient, error) {
 
 	return &FiresoreClient{
 		ctx: ctx,
-		db:  client,
+		Db:  client,
 	}, nil
 }
 
@@ -58,5 +58,5 @@ func (client *FiresoreClient) DeleteDocument(collectionRef *firestore.Collection
 
 //Close closes any resources held by the client
 func (client *FiresoreClient) Close() {
-	client.db.Close()
+	client.Db.Close()
 }
