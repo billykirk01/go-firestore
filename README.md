@@ -2,7 +2,13 @@
 
 A thin wrapper around the Google's [Firestore client library for Go](https://github.com/googleapis/google-cloud-go/tree/master/firestore).
 
-Examples below:
+Install:
+
+```go
+go get github.com/wkirk01/Go-Firestore
+```
+
+Example usage:
 
 ```go
 package main
