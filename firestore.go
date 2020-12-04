@@ -88,3 +88,20 @@ func (client *FiresoreClient) GetDocuments(collectionRef *firestore.CollectionRe
 	}
 	return documents, nil
 }
+
+//Query gets documents in a collection reference
+func (client *FiresoreClient) Query(query *firestore.Query) ([]interface{}, error) {
+	documents := []interface{}{}
+	iter := query.Documents(client.ctx)
+	for {
+		doc, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			return nil, err
+		}
+		documents = append(documents, doc.Data())
+	}
+	return documents, nil
+}
