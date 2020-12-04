@@ -52,12 +52,12 @@ func main() {
 
    fmt.Printf("Documents in users collection: %v\n", documents)
 
-   queryresults, err := client.Query(client.Db.Collection("users").Where("First", "==", "foo"))
+   queryResults, err := client.Query(client.Db.Collection("users").Where("First", "==", "foo"))
    if err != nil {
       log.Fatalf("Failed adding document: %v", err)
    }
 
-   fmt.Printf("Documents in users collection with foo for first name: %v\n", queryresults)
+   fmt.Printf("Documents in users collection with foo for first name: %v\n", queryResults)
 
    err = client.DeleteDocument(client.Db.Collection("users"), docID)
    if err != nil {
