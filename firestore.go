@@ -90,7 +90,7 @@ func (client *FiresoreClient) GetDocuments(collectionRef *firestore.CollectionRe
 }
 
 //Query gets documents in a collection reference
-func (client *FiresoreClient) Query(query *firestore.Query) ([]interface{}, error) {
+func (client *FiresoreClient) Query(query firestore.Query) ([]interface{}, error) {
 	documents := []interface{}{}
 	iter := query.Documents(client.ctx)
 	for {
