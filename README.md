@@ -17,7 +17,6 @@ import (
    "fmt"
 
    log "github.com/sirupsen/logrus"
-
    firestore "github.com/wkirk01/Go-Firestore"
 )
 
