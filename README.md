@@ -1,23 +1,22 @@
-# Go-Firestore
+# ✨ go-firestore
 
 A thin wrapper around the Google's [Firestore client library for Go](https://github.com/googleapis/google-cloud-go/tree/master/firestore).
 
-Install:
+## 📦 Installing
 
 ```go
-go get github.com/wkirk01/Go-Firestore
+go get github.com/wkirk01/go-firestore
 ```
 
-Example usage:
+## 📖 Example Usage
 
 ```go
 package main
 
 import (
    "fmt"
-
    log "github.com/sirupsen/logrus"
-   firestore "github.com/wkirk01/Go-Firestore"
+   firestore "github.com/wkirk01/go-firestore"
 )
 
 type person struct {
@@ -26,7 +25,7 @@ type person struct {
 }
 
 func main() {
-   client, err := firestore.NewClient("~/Development/Firebase/Credentials/wkirk-go-test.json")
+   client, err := firestore.NewClient("~/path/to/firebase/credentials.json")
    if err != nil {
       log.Fatalf("Could not initialize Cloud Firestore: %v", err)
    }
