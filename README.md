@@ -5,7 +5,7 @@ A thin wrapper around the Google's [Firestore client library for Go](https://git
 ## 📦 Installing
 
 ```go
-go get github.com/wkirk01/go-firestore
+go get github.com/billykirk01/go-firestore
 ```
 
 ## 📖 Example Usage
@@ -16,7 +16,7 @@ package main
 import (
    "fmt"
    log "github.com/sirupsen/logrus"
-   firestore "github.com/wkirk01/go-firestore"
+   firestore "github.com/billykirk01/go-firestore"
 )
 
 type person struct {
